@@ -33,7 +33,7 @@ Dados refletidos no JSON utilizado pelo json-server, garantindo persistência lo
 ### 3. Tratamento de Erros e Mensagens Amigáveis
 
 🚫 Erros de API
-Exibe mensagens amigáveis em caso de erros nas requisições à API (ex.: falha de conexão, erro 500).
+Exibe mensagens amigáveis em caso de erros nas requisições à API.
 
 🌐 Rotas Não Existentes
 Tratamento de navegação para rotas inexistentes, evitando que o usuário encontre páginas de erro.
