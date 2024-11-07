@@ -12,7 +12,12 @@
     border: 1px solid #ccc;
     border-radius: 1rem;
 
-    .user-info{
+    position: absolute;   /* Tornando o conteúdo posicionado em relação à tela */
+    top: 50%;             /* Colocando no meio da tela */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ajustando para garantir que fique exatamente no centro */
+
+    .user-info {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -27,6 +32,18 @@
             border-radius: 50%;
             border: 6px solid #5432d1;
             margin-bottom: 2rem;
+        }
+    }
+
+    .logout-button {
+        color: #fff; 
+        background-color: #d32f2f;  
+        width: 100%;  
+        font-weight: bold;
+        text-align: center;
+        
+        &:hover {
+            background-color: #b71c1c; 
         }
     }
 }

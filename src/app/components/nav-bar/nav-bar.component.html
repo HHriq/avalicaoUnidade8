@@ -13,7 +13,9 @@
                 <img [src]="profile?.picture" alt="{{ profile?.name }}" >
             </button>
             <mat-menu #belowMenu="matMenu" yPosition="below">
-                <button mat-menu-item (click)="logout()">Log out</button>
+                <button mat-menu-item (click)="logout()" class="logout-button">
+                    <mat-icon>exit_to_app</mat-icon> Log out
+                </button>
             </mat-menu>
 
             

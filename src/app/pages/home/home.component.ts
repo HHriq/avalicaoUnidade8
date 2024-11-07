@@ -66,47 +66,11 @@ export class HomeComponent {
     
   }
 
-  //Métodos-------------------------------------------//
   
   getItens(): void {
     this.itens$ = this.itemService.getItens().pipe(
       map(items => items.filter(item => item.comprado == false))
     );
-
-    // this.itensComprados$ = this.itemService.getItens().pipe(
-    //   map(items => items.filter(item => item.comprado == true))
-    // );
-
-    
-    
-    // this.itemService.getItens().pipe(
-    // catchError((error=>{
-    //   return throwError(error);
-    // }))).subscribe((i: any) => {
-    //   this.itens$ = i;
-    // })
-     
-    
-    // (
-    //   map(items => items.filter(item => item.comprado == true))
-    // );
-
-
-    // this.itemService.getItens().pipe(
-    //   catchError(error => {
-    //     console.error("Erro ao carregar os itens:", error); // Log para depuração
-    //     alert("Erro ao carregar os itens. Por favor, tente novamente mais tarde."); // Mensagem para o usuário
-    //     return ([]); // Retorna um Observable de array vazio para o fluxo continuar
-    //   })
-    // ).subscribe((items: Item[]) => {
-    //   // Filtra itens conforme o status 'comprado'
-    //   this.itens$ = items.filter(item => !item.comprado);
-    //   this.itensComprados$ = items.filter(item => item.comprado);
-    // });
-
-
-
-
     
   }
 

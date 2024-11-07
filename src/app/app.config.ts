@@ -10,8 +10,8 @@ import { provideHttpClient } from '@angular/common/http';
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
     provideAuth0({
-      domain: 'dev-phjybjp76k8ei23p.us.auth0.com',
-      clientId: 'ozfDLkmAlNhpGAeWmroVTgcKkFSaAbQ9',
+      domain: 'dev-qg80x6j0zuz5e4em.us.auth0.com',
+      clientId: 'cP9FqgXcDYpEt0EvUDwJ8GMziJjq7fsN',
       authorizationParams: {
         redirect_uri: window.location.origin,
       },
