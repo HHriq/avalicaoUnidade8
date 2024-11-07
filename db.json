@@ -1,3 +1,22 @@
 {
-  "itens": []
+  "itens": [
+    {
+      "id": "5a30",
+      "nome": "Maçã",
+      "quantidade": 50,
+      "comprado": false
+    },
+    {
+      "id": "2d72",
+      "nome": "Pêra",
+      "quantidade": 666,
+      "comprado": false
+    },
+    {
+      "id": "7f67",
+      "nome": "Playstation 6",
+      "quantidade": 1,
+      "comprado": true
+    }
+  ]
 }
