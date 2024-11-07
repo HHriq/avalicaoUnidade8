@@ -1,27 +1,49 @@
-# LoginOauth2
+## Projeto: Lista de Compras II 🛒
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
+Este projeto foi desenvolvido como parte da Unidade 6 da Residência de Software Tic36 🚀, com o objetivo de implementar uma aplicação com Autenticação e Autorização via OAuth2 e consumo de APIs em uma Lista de Compras de Supermercado.
 
-## Development server
+### 🛠️ Tecnologias Utilizadas
+- Angular CLI 17.3.10
+- OAuth 2.0 para autenticação
+- HttpClient para consumo de APIs
+- json-server para simulação de backend
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 🚀 Funcionalidades
 
-## Code scaffolding
+### 1. Autenticação e Autorização
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+🔐 Login OAuth 2.0
+Implementação funcional de login usando OAuth 2.0 (ex.: Google)
+Apenas usuários autenticados podem acessar as rotas protegidas da aplicação.
 
-## Build
+🛡️ Guards para Restrição de Acesso
+Guards para garantir que apenas usuários autenticados possam acessar a lista de compras.
+Acesso restrito a cada lista com base no usuário autenticado, mantendo a segurança e privacidade dos dados.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 2. Consumo de APIs com HttpClient
 
-## Running unit tests
+🔄 Leitura e Escrita de Dados
+A aplicação consome uma API Rest simulada com json-server para listar, criar e excluir itens de compras.
+Permite uma experiência fluida e intuitiva para o usuário gerenciar sua lista.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+📥 Atualização dos Dados
+Atualização do status dos itens na lista de compras (ex.: marcar como comprado).
+Dados refletidos no JSON utilizado pelo json-server, garantindo persistência local durante a simulação.
 
-## Running end-to-end tests
+### 3. Tratamento de Erros e Mensagens Amigáveis
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+🚫 Erros de API
+Exibe mensagens amigáveis em caso de erros nas requisições à API (ex.: falha de conexão, erro 500).
 
-## Further help
+🌐 Rotas Não Existentes
+Tratamento de navegação para rotas inexistentes, evitando que o usuário encontre páginas de erro.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 📋 Funcionalidades da Lista de Compras
+
+➕ Adicionar Itens: Permite adicionar itens rapidamente por meio de um campo de texto.
+
+✅ Marcar como Comprado: Itens podem ser marcados como comprados.
+
+📂 Agrupar por Status: Exibe itens comprados e não comprados em grupos separados.
+
+🗑️ Excluir Itens: Ícone de lixeira para exclusão de itens com um clique.
