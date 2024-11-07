@@ -1,0 +1,25 @@
+<div class="nav-container">
+    <nav>
+        <ul>
+            <div class="page-links">
+                <li><a routerLink="home" >Home</a></li>
+                <li><a routerLink="profile" >Profile</a></li>
+            </div>
+        </ul>
+        
+        <ul>
+
+            <button *ngIf="auth.isAuthenticated$ | async" class="user-menu" mat-button [matMenuTriggerFor]="belowMenu">
+                <img [src]="profile?.picture" alt="{{ profile?.name }}" >
+            </button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item (click)="logout()">Log out</button>
+            </mat-menu>
+
+            
+            <div class="auth-button">
+                <li class="nav-item" *ngIf="(auth.isAuthenticated$ | async) === false"><button mat-raised-button (click)="loginRedirect()">Log in</button> </li>
+            </div>
+        </ul>
+    </nav>
+</div>

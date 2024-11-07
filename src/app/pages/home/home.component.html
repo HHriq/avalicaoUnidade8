@@ -1,0 +1,114 @@
+<div class="home-content">
+  <h1 *ngIf="(auth.isAuthenticated$ | async) === false">
+    Faça o login para começar
+  </h1>
+
+  <div *ngIf="auth.isAuthenticated$ | async" class="user-content">
+    <div class="shopping-list-container">
+      <h1>Lista de Compras</h1>
+
+      <form (ngSubmit)="addItem()" [formGroup]="itemForm">
+        <mat-form-field class="input-nome" appearance="outline">
+          <input matInput placeholder="Insira um item" formControlName="nome" />
+        </mat-form-field>
+
+        <mat-form-field class="input-qtdade" appearance="outline">
+          <input
+            type="number"
+            matInput
+            placeholder="Quantidade"
+            formControlName="quantidade"
+          />
+        </mat-form-field>
+
+        <button type="submit" [disabled]="itemForm.invalid">
+          <mat-icon>add ✏️</mat-icon>
+        </button>
+      </form>
+
+      <div class="item-list">
+        <h2>Itens Não Comprados</h2>
+
+        <table mat-table [dataSource]="itens$">
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef>Nome</th>
+            <td mat-cell *matCellDef="let item">{{ item.nome }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="quantidade">
+            <th mat-header-cell *matHeaderCellDef>Quantidade</th>
+            <td mat-cell *matCellDef="let item">{{ item.quantidade }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="comprado">
+            <th mat-header-cell *matHeaderCellDef>Comprado</th>
+            <td mat-cell *matCellDef="let item">{{ item.comprado }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let item">
+              <button mat-icon-button (click)="comprarItem(item)">
+                <mat-icon>radio_button_unchecked</mat-icon>
+              </button>
+
+              <button mat-icon-button (click)="deletarItem(item.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr
+            mat-header-row
+            *matHeaderRowDef="['nome', 'quantidade', 'actions']"
+          ></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: ['nome', 'quantidade', 'actions']"
+          ></tr>
+        </table>
+
+        <br />
+        <hr />
+        <br />
+
+        <h2>Itens Comprados</h2>
+
+        <table mat-table [dataSource]="itensComprados$">
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef>Nome</th>
+            <td mat-cell *matCellDef="let item">{{ item.nome }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="quantidade">
+            <th mat-header-cell *matHeaderCellDef>Quantidade</th>
+            <td mat-cell *matCellDef="let item">{{ item.quantidade }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="comprado">
+            <th mat-header-cell *matHeaderCellDef>Comprado</th>
+            <td mat-cell *matCellDef="let item">{{ item.comprado }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let item">
+              <button mat-icon-button (click)="deletarItem(item.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr
+            mat-header-row
+            *matHeaderRowDef="['nome', 'quantidade', 'actions']"
+          ></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: ['nome', 'quantidade', 'actions']"
+          ></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

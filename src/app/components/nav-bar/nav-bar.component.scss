@@ -1,0 +1,66 @@
+.nav-container {
+    max-width: 100vw;
+    max-height: fit-content;
+    background-color: rgb(41, 41, 41);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nav-container nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container nav .page-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    font-size: 1rem;
+
+    li {
+        list-style: none;
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        button {
+            color: white;
+        }
+    }
+}
+
+.nav-container nav .auth-button {
+    padding-right: 40px;
+
+    li {
+        list-style: none;
+    }
+}
+
+.user-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    img {
+        max-width: 40px;
+        max-height: 40px;
+        border-radius: 50%;
+    }
+
+    p {
+        color: white;
+    }
+}
+
+mat-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(41, 41, 41);
+}
