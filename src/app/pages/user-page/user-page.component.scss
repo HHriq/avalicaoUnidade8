@@ -12,10 +12,10 @@
     border: 1px solid #ccc;
     border-radius: 1rem;
 
-    position: absolute;   /* Tornando o conteúdo posicionado em relação à tela */
-    top: 50%;             /* Colocando no meio da tela */
+    position: absolute;  
+    top: 50%;             
     left: 50%;
-    transform: translate(-50%, -50%); /* Ajustando para garantir que fique exatamente no centro */
+    transform: translate(-50%, -50%); 
 
     .user-info {
         display: flex;

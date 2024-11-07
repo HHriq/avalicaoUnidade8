@@ -19,7 +19,7 @@ export class AppComponent {
 
 
   ngOnInit() {
-    // Verifica se o usuário está autenticado e redireciona para a página Home
+    
     this.auth.isAuthenticated$.subscribe((isAuthenticated) => {
       if (isAuthenticated) {
         this.router.navigate(['home']);
